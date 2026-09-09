@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+    int bookId;
+
+    do {
+        cout << "\n--- SMART Library ---\n";
+        cout << "1. Add Book\n";
+        cout << "2. Display All Books\n";
+        cout << "3. Search Book\n";
+        cout << "4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                cout << "Enter Book ID: ";
+                cin >> bookId;
+                cout << "Book added successfully.\n";
+                break;
+
+            case 2:
+                cout << "Displaying all books...\n";
+                break;
+
+            case 3:
+                cout << "Enter Book ID to search: ";
+                cin >> bookId;
+                cout << "Searching for Book ID: " << bookId << endl;
+                break;
+
+            case 4:
+                cout << "Exiting the program...\n";
+                break;
+
+            default:
+                cout << "Invalid choice!\n";
+        }
+
+    } while (choice != 4);
+
+    return 0;
+}
