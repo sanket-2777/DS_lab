@@ -1,42 +1,77 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
+    int book[10];
+    int n = 0;
     int choice;
-    int bookId;
+    int searchID;
 
-    do {
-        cout << "\n--- SMART Library ---\n";
-        cout << "1. Add Book\n";
-        cout << "2. Display All Books\n";
-        cout << "3. Search Book\n";
-        cout << "4. Exit\n";
-        cout << "Enter your choice: ";
+    do
+    {
+        cout << "\n===== SMART LIBRARY =====";
+        cout << "\n1. Add Book";
+        cout << "\n2. Display Books";
+        cout << "\n3. Search Book";
+        cout << "\n4. Exit";
+
+        cout << "\nEnter your choice: ";
         cin >> choice;
 
-        switch (choice) {
-            case 1:
-                cout << "Enter Book ID: ";
-                cin >> bookId;
-                cout << "Book added successfully.\n";
-                break;
+        if (choice == 1)
+        {
+            cout << "Enter Book ID: ";
+            cin >> book[n];
 
-            case 2:
-                cout << "Displaying all books...\n";
-                break;
+            n++;
 
-            case 3:
-                cout << "Enter Book ID to search: ";
-                cin >> bookId;
-                cout << "Searching for Book ID: " << bookId << endl;
-                break;
+            cout << "Book Added!";
+        }
 
-            case 4:
-                cout << "Exiting the program...\n";
-                break;
+        else if (choice == 2)
+        {
+            cout << "\nBooks in Library:\n";
 
-            default:
-                cout << "Invalid choice!\n";
+            for (int i = 0; i < n; i++)
+            {
+                cout << book[i] << endl;
+            }
+        }
+
+        else if (choice == 3)
+        {
+            cout << "Enter Book ID to search: ";
+            cin >> searchID;
+
+            bool found = false;
+
+            for (int i = 0; i < n; i++)
+            {
+                if (book[i] == searchID)
+                {
+                    found = true;
+                }
+            }
+
+            if (found)
+            {
+                cout << "Book Found!";
+            }
+            else
+            {
+                cout << "Book Not Found!";
+            }
+        }
+
+        else if (choice == 4)
+        {
+            cout << "Thank you!";
+        }
+
+        else
+        {
+            cout << "Invalid Choice!";
         }
 
     } while (choice != 4);
